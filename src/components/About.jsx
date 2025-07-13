@@ -1,6 +1,31 @@
 import "../assets/css/About.css";
+import pancard from "../../public/images/pancard.jpg";
+import legalcard from "../../public/images/legalcard.jpg";
+import { useEffect } from "react";
 
 const About = () => {
+  useEffect(() => {
+    const aboutSection = document.querySelector(".about-section");
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            document.querySelector(".about-text").classList.add("animate");
+            document.querySelector(".about-images").classList.add("animate");
+            document.querySelectorAll(".detail-item").forEach((item) => {
+              item.classList.add("animate");
+            });
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    if (aboutSection) {
+      observer.observe(aboutSection);
+    }
+  }, []);
   return (
     <section className="about-section">
       <div className="container">
@@ -34,15 +59,15 @@ const About = () => {
             </div>
           </div>
           <div className="about-images">
-            <div className="image-placeholder">
+            {/* <div className="image-placeholder">
               <p>Owner's Photo</p>
-            </div>
+            </div> */}
             <div className="certificates">
               <div className="certificate-placeholder">
-                <p>PAN Card</p>
+                <img src={pancard} alt="pan card" />
               </div>
               <div className="certificate-placeholder">
-                <p>Legal Document</p>
+                <img src={legalcard} alt="legal document" />
               </div>
             </div>
           </div>

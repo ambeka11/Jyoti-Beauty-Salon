@@ -7,53 +7,64 @@ const Contact = () => {
         <h2 className="section-title">Contact Us</h2>
         <div className="contact-content">
           <div className="contact-info">
-            <h3>Get In Touch</h3>
-            <p>
-              Have questions or want to book an appointment? Reach out to us!
-            </p>
-            <div className="info-item">
-              <i className="fas fa-map-marker-alt"></i>
-              <div>
-                <h4>Address</h4>
-                <p>Birtamod-2, Charpane, Jhapa</p>
+            <div className="contact-intro">
+              <h3>Get In Touch</h3>
+              <p className="intro-text">
+                Have questions or want to book an appointment? Reach out to us!
+              </p>
+              <div className="social-section">
+                <h4 className="social-title">Follow Us</h4>
+                <div className="social-links">
+                  <a
+                    href="https://www.facebook.com/share/15qvsPJAtC/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Facebook"
+                  >
+                    <i className="fab fa-facebook-f"></i>
+                  </a>
+                  <a
+                    href="https://www.instagram.com/jyotibeautysalonandacademy?igsh=MW40dGhqZmdweGQ2aQ=="
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Instagram"
+                  >
+                    <i className="fab fa-instagram"></i>
+                  </a>
+                  <a
+                    href="https://www.tiktok.com/@jyotibeautysalon2081?_t=ZS-8xpbE2RyVrm&_r=1"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="TikTok"
+                  >
+                    <i className="fab fa-tiktok"></i>
+                  </a>
+                </div>
               </div>
             </div>
-            <div className="info-item">
-              <i className="fas fa-phone"></i>
-              <div>
-                <h4>Phone</h4>
-                <p>9801364877</p>
+
+            <div className="contact-details">
+              <div className="info-item">
+                <i className="fas fa-map-marker-alt"></i>
+                <div>
+                  <h4>Address</h4>
+                  <p>Birtamod-2, Charpane, Jhapa</p>
+                </div>
               </div>
-            </div>
-            <div className="info-item">
-              <i className="fas fa-envelope"></i>
-              <div>
-                <h4>Email</h4>
-                <p>Jyotisalonacademy@gmail.com</p>
+              <div className="info-item">
+                <i className="fas fa-phone"></i>
+                <div>
+                  <h4>Phone</h4>
+                  <p>9801364877</p>
+                </div>
               </div>
-            </div>
-            <div className="social-links">
-              <a
-                href="https://www.facebook.com/share/15qvsPJAtC/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <i className="fab fa-facebook"></i>
-              </a>
-              <a
-                href="https://www.instagram.com/jyotibeautysalonandacademy?igsh=MW40dGhqZmdweGQ2aQ=="
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <i className="fab fa-instagram"></i>
-              </a>
-              <a
-                href="https://www.tiktok.com/@jyotibeautysalon2081?_t=ZS-8xpbE2RyVrm&_r=1"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <i className="fab fa-tiktok"></i>
-              </a>
+              <div className="info-item">
+                <i className="fas fa-envelope"></i>
+                <div>
+                  <h4>Email</h4>
+                  <p>Jyotisalonacademy@gmail.com</p>
+                </div>
+              </div>
             </div>
           </div>
           <form className="contact-form">

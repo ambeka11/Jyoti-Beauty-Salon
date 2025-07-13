@@ -1,14 +1,27 @@
+import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import "../assets/css/Header.css";
 
 const Header = () => {
+  useEffect(() => {
+    const mobileMenuBtn = document.querySelector(".mobile-menu");
+    const nav = document.querySelector(".nav");
+
+    if (mobileMenuBtn && nav) {
+      mobileMenuBtn.addEventListener("click", () => {
+        nav.classList.toggle("active");
+        mobileMenuBtn.classList.toggle("active");
+      });
+    }
+  }, []);
+
   return (
     <header className="header">
       <div className="container">
         <div className="header-content">
           <Link to="/" className="logo">
             <img src="/images/logo.png" alt="Jyoti Beauty Salon & Academy" />
-            <span>Jyoti Beauty Salon & Academy</span>
+            <span className="logo-text">Jyoti Beauty Salon & Academy</span>
           </Link>
           <nav className="nav">
             <ul>

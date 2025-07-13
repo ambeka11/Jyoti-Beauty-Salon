@@ -1,29 +1,77 @@
 .contact-section {
-  padding: 5rem 0;
+  padding: 6rem 0;
   background: var(--light);
+  position: relative;
+}
+
+/* .contact-section::before {
+  content: "";
+  position: absolute;
+  bottom: -50px;
+  left: -50px;
+  width: 200px;
+  height: 200px;
+  background: var(--primary);
+  opacity: 0.05;
+  border-radius: 50%;
+  z-index: 0;
+} */
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: var(--primary);
+  font-size: 2.3rem;
+  position: relative;
+}
+
+.section-title::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background: var(--accent);
 }
 
 .contact-content {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 3rem;
+  margin-top: 3rem;
+}
+
+.contact-info {
+  padding: 2rem;
 }
 
 .contact-info h3 {
   color: var(--dark);
-  margin-bottom: 1.5rem;
   font-size: 1.5rem;
+  margin-bottom: 1.5rem;
 }
 
 .contact-info p {
+  color: var(--text-light);
   margin-bottom: 2rem;
-  color: var(--text);
+  line-height: 1.7;
 }
 
 .info-item {
   display: flex;
+  align-items: flex-start;
   gap: 1rem;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.8rem;
 }
 
 .info-item i {
@@ -35,34 +83,59 @@
 .info-item h4 {
   color: var(--dark);
   margin-bottom: 0.3rem;
+  font-size: 1.1rem;
 }
 
 .info-item p {
-  margin: 0;
   color: var(--text);
+  margin: 0;
+  font-size: 0.95rem;
 }
-
+.social-section {
+  margin-top: 6rem;
+}
+.social-title {
+  padding-bottom: 20px;
+}
 .social-links {
   display: flex;
-  gap: 1rem;
-  margin-top: 2rem;
+  gap: 2rem;
 }
 
 .social-links a {
-  color: var(--dark);
-  font-size: 1.2rem;
-  transition: color 0.3s ease;
+  width: 42px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(26, 58, 143, 0.1);
+  border-radius: 50%;
+  color: var(--primary);
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
 }
 
 .social-links a:hover {
-  color: var(--primary);
+  background: var(--primary);
+  color: white;
+  transform: translateY(-3px);
 }
 
 .contact-form {
   background: white;
-  padding: 2rem;
-  border-radius: 10px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  padding: 2.5rem;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(26, 58, 143, 0.1);
+  transform: translateY(20px);
+  opacity: 0;
+  animation: slideUp 0.8s ease-out 0.4s forwards;
+}
+
+@keyframes slideUp {
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
 
 .form-group {
@@ -73,11 +146,12 @@
 .form-group select,
 .form-group textarea {
   width: 100%;
-  padding: 0.8rem 1rem;
-  border: 1px solid #ddd;
-  border-radius: 5px;
+  padding: 0.9rem 1.2rem;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
   font-size: 1rem;
-  transition: border-color 0.3s ease;
+  transition: all 0.3s ease;
+  background: white;
 }
 
 .form-group input:focus,
@@ -85,14 +159,79 @@
 .form-group textarea:focus {
   outline: none;
   border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(26, 58, 143, 0.1);
 }
 
 .form-group textarea {
   resize: vertical;
+  min-height: 120px;
+}
+
+.btn[type="submit"] {
+  width: 100%;
+  background: var(--primary);
+  color: white;
+  padding: 1rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn[type="submit"]:hover {
+  background: var(--primary-light);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(26, 58, 143, 0.2);
+}
+
+@media (max-width: 992px) {
+  .contact-content {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .contact-info {
+    padding: 0;
+    text-align: center;
+  }
+
+  .info-item {
+    justify-content: center;
+  }
+
+  .social-links {
+    justify-content: center;
+  }
 }
 
 @media (max-width: 768px) {
-  .contact-content {
-    grid-template-columns: 1fr;
+  .contact-section {
+    padding: 4rem 0;
+  }
+
+  .section-title {
+    font-size: 2rem;
+  }
+
+  .contact-form {
+    padding: 2rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .section-title {
+    font-size: 1.8rem;
+  }
+
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    padding: 0.8rem 1rem;
+  }
+
+  .btn[type="submit"] {
+    padding: 0.9rem;
   }
 }
